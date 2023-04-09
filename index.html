@@ -69,7 +69,7 @@
       <section class="hero">
         <div class="container hero-container">
         <h1 class="hero-header">Effective Solutions for Your Business</h1>
-        <button class="hero-btn btn" type="button">Order Service</button>
+        <button class="hero-btn btn" data-modal-open type="button">Order Service</button>
       </div>
       </section>
 
@@ -426,5 +426,16 @@ problem to walk away with the perfect and creative solution.
       </div>
     </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button type="button" class="modal-close" data-modal-close>
+      
+            <svg width="24" height="24" class="close-icon">
+            <use href="./images/modal/"></use>
+          </svg>
+        </button>
+        <script src="./js/modal.js"></script>
+      </div>
+    </div>
   </body>
 </html>

@@ -177,8 +177,11 @@ img {
 .header-list {
   display: flex;
   gap: 40px;
-
 }
+.header-item {
+  position: relative;
+}
+
 .header-nav-link {
   display: block;
   padding-top: 24px;
@@ -189,6 +192,21 @@ img {
   line-height: calc(24 / 16);
   letter-spacing: 0.02em;
   color: var(--main-text-color-nb);
+}
+
+.header-nav-link:hover::after,
+.header-nav-link:active::after, 
+.header-nav-link:focus::after {
+  content: "";
+  position: absolute;
+  top: 48px;
+  left: 0;
+  transform: translateY(22px);
+  width: 100%;
+  height: 4px;
+  
+  background: #404BBF;
+  border-radius: 2px;
 }
 
 .header-contacts-list {
@@ -676,6 +694,37 @@ background-image: linear-gradient(
   /* outline: 2px solid red;
   outline-offset: -2px ; */
 }
+
+.portfolio-item:hover .pf-item-img-cover-text,
+.portfolio-item:focus .pf-item-img-cover-text {
+  transform: translateY(0);
+  
+}
+
+
+.pf-item-img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.pf-item-img-cover-text {
+  position: absolute;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  padding: 40px 32px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: calc(24 / 16);
+  letter-spacing: 0.02em;
+  color: #F4F4FD;
+
+  background: #4D5AE5;
+  transform: translateY(100%);
+
+  transition: transform 300ms linear;
+  
+}
  .portfolio-link {
   display: block;
  }
@@ -710,4 +759,45 @@ background-image: linear-gradient(
   border: 1px solid var(--accent-text-color-cf);
   border-top: none;
 
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(46, 47, 66, 0.4);
+  transition: opacity 300ms linear, visibility 300ms linear;
+}
+
+
+.modal {
+  padding: 24px;
+  position: absolute;
+  width: 408px;
+  height: 576px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scaleY(1);
+  transition: transform 300ms linear;
+
+  background: #FCFCFC;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scaleY(0);
+}
+
+.modal-close {
+  display: block;
+  margin-left: auto;
+  
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
