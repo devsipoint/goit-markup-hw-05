@@ -866,8 +866,11 @@ background-image: linear-gradient(
   justify-content: center;
   align-items: center; */
   position: relative;
+  cursor: pointer;
+  
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .modal-close:hover,
@@ -882,6 +885,7 @@ background-image: linear-gradient(
 }
 
 .close-icon {
+  cursor: pointer;
  position: absolute;
  left: 50%;
  top: 50%;
